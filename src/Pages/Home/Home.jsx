@@ -7,7 +7,7 @@ const Home = () => {
 
             {/* Start Coding from here */}
 
-            <h2 className='text'> Hello</h2>
+          
 
     </div>
   )
