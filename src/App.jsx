@@ -4,18 +4,20 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './Pages/Home/Home'
 import Head from './Pages/Head'
+import Banner from './Pages/Home/Banner'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+
+
 
   return (
     <div className="App">
-     <Head></Head>
-
-      <Home></Home>
-      
-    
+    <Head></Head>
+    <Banner></Banner>
+    <Home></Home>
     </div>
 
   )
