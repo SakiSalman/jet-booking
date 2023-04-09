@@ -14,7 +14,7 @@ const Head = () => {
                   <img className="w-48 items-center pt-3" src={logo} alt="" />
                 </a>
                 <span
-                  class="sm:hidden text-white cursor-pointer flex"
+                  class="sm:hidden text-white cursor-pointer flex duration-200"
                   id="mobile_btn"
                   onClick={() => setMenu(!menu)}
                 >
@@ -36,9 +36,58 @@ const Head = () => {
               </div>
             </div>
 
-            {menu && (
-              <nav class="sm:flex w-full sm:w-auto mx-auto" id="main_menu">
+            <nav class="hidden sm:block sm:flex w-full sm:w-auto mx-auto" id="main_menu">
                 <ul class="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white">
+                  <li class="ml-0 sm:ml-8">
+                    <a
+                      class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      href="#"
+                    >
+                      Experience
+                    </a>
+                  </li>
+
+                  <li class="ml-0 sm:ml-8">
+                    <a
+                      class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      href="#"
+                    >
+                      Charter
+                    </a>
+                  </li>
+
+                  <li class="ml-0 sm:ml-8">
+                    <a
+                      class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      href="#services"
+                    >
+                      Shuttole
+                    </a>
+                  </li>
+
+                  <li class="ml-0 sm:ml-8">
+                    <a
+                      class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      href="#brand"
+                    >
+                      Deals
+                    </a>
+                  </li>
+
+                  <li class="ml-0 sm:ml-8">
+                    <a
+                      class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlowe"
+                      href="#portfolio"
+                    >
+                      Membership
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            {menu && (
+              <nav class="sm:flex w-full sm:w-auto mx-auto absolute bg-black w-ful  left-0 right-0" id="main_menu">
+                <ul class="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white px-5">
                   <li class="ml-0 sm:ml-8">
                     <a
                       class="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
