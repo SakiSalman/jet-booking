@@ -5,10 +5,10 @@ import './App.css'
 import Home from './Pages/Home/Home'
 import Head from './Pages/Head'
 import Banner from './Pages/Home/Banner'
+import 'boxicons';
 
 
 function App() {
-
 
 
 
