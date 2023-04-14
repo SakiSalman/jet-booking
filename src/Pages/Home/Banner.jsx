@@ -175,7 +175,7 @@ function Banner() {
 
             <div class="container mx-auto flex items-center justify-between flex-col sm:flex-row" >
               <div class="content mx-auto">
-                <h1 class="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white font-barlow uppercase"> A new class of possibilities.</h1>
+                <h2 class="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white font-barlow uppercase"> A new class of possibilities.</h2>
                 <p class="text-[18px] text-white my-[40px] text-center mx-auto w-3/4 mb-8 font-opensans ">The fastest growing private jet company in the world</p>
                 <p class="text-center pt-4"><a href="" class="btn">Request Quote</a></p>
               </div>
@@ -272,8 +272,69 @@ function Banner() {
         </section>
         {/* Luxury charters End */}
 
+        <div className="footer-top mx-auto">
+          <img className='mx-auto w-3/6' src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-side-768x240.jpg" alt="" />
+        </div>
+        <footer className='bg-black py-8 sm:py-8'>
+         <div className="container mx-auto">
+          <div className="logo mx-auto py-8">
+           <a href="#"><img className='mx-auto' src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/logo_05.png" alt="" /></a> 
+          </div>
+          <div className="footer_menu py-6 sm:6 flex justify-between items-center sm:px-0 px-4 border-y border-[#4e4e4e]">
+            <div className="menu_list">
+              <ul className='sm:flex flex-row  text-white gap-16'>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">CONTACT</a></li>
+              </ul>
+            </div>
+            <div className="bottom_top text-white">
+              <span> <a href="#"><i class="fa-solid fa-arrow-up"></i> TOP</a> </span>
+            </div>
+          </div>
+          <div className="footer_location pt-6 sm:flex flex-row pl-4 justify-between items-center">
+            <div className="location-1 text-white">
+              <h3 className='text-[#a8987e] font-bold pb-4'>ASIA & PACIFIC</h3>
+              <ul className='font-thin'>
+                <li>2473 Red Road Ste 98 Singapore SG</li>
+                <li>Singapore SG</li>
+                <li>+ 1 623 211 6319</li>
+              </ul>
+            </div>
+            <div className="location-1 text-white">
+              <h3 className='text-[#a8987e] font-bold pb-4'>ASIA & PACIFIC</h3>
+              <ul className='font-thin'>
+                <li>2473 Red Road Ste 98 Singapore SG</li>
+                <li>Singapore SG</li>
+                <li>+ 1 623 211 6319</li>
+              </ul>
+            </div>
+            <div className="location-1 text-white">
+              <h3 className='text-[#a8987e] font-bold pb-4'>QUICK LINKS</h3>
+              <ul className='font-thin'>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Privacy Policy</li>
+                <li>Tearms & Conditions</li>
+              </ul>
+            </div>
+            <div className="location-1 text-white">
+              <h3 className='text-[#a8987e] font-bold pb-4'>NEWSLETTER</h3>
+              <form action="">
+                <label htmlFor="">Email:</label><br/>
+                <input className='p-2 rounded' placeholder='Enter Your Email:' type="text" />
+              </form>
+            </div>      
+          </div>
+          <div className='pt-8 border-t mt-8 border-gray-700'>
+            <h5 className='text-white text-center'>Copyright 2023. All Right Reserve</h5>
+          </div>
 
 
+          </div>
+        </footer>
 
 
 

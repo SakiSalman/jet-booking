@@ -17,5 +17,5 @@
     @apply text-center m-auto bg-[#a8987e] py-3 px-[20px] text-white text-lg uppercase font-bold hover:bg-white hover:text-black transition-colors;
 }
 h2{
-    @apply text-3xl sm:text-6xl mx-auto text-center mt-5 text-black font-barlow
+    @apply text-3xl sm:text-5xl mx-auto text-center mt-5 text-black font-barlow
 }
