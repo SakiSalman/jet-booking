@@ -342,8 +342,6 @@ function Banner() {
 
 
 
-
-
 {/* <div>
     <img className="h-[650px] w-[100%] opacity" src="https://www.flyblack.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-image-black.035f60ce.jpg&w=1920&q=100" alt="" />
 </div> */}
