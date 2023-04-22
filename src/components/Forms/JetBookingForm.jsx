@@ -68,7 +68,7 @@ const JetBookingForm = () => {
               showForm.roundWay && <RoundWay data={ports}></RoundWay>
             }
             {
-              showForm.multiWay && <MultiLeg/>
+              showForm.multiWay && <MultiLeg data={ports}/>
             }
           </div>
         </div>
