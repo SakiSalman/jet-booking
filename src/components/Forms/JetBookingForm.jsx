@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { loadAirports } from "../../Redux/Airports/portAction";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import OnewayForm from "./OnewayForm";
+import RoundWay from "./RoundWay";
+import { useSelector } from "react-redux";
+import MultiLeg from "./MultiLeg";
 
 const JetBookingForm = () => {
+
+  // get all ports
+  const {ports} = useSelector(state => state.port)
+
+  console.log(ports);
   // get all ports
   const [airPorts, setAirPorts] = useState([]);
   const [showForm, setShowForm] = useState({
@@ -11,11 +18,7 @@ const JetBookingForm = () => {
     roundWay: false,
     multiWay: false,
   });
-  useEffect(() => {
-    loadAirports().then((res) => {
-      setAirPorts(res.data);
-    });
-  }, []);
+ 
 
   const handleShowForm = (form) => {
     if (form === 'oneway') {
@@ -59,13 +62,13 @@ const JetBookingForm = () => {
               </div>
             </div>
             {
-              showForm.oneWay && <OnewayForm data={airPorts}></OnewayForm>
+              showForm.oneWay && <OnewayForm data={ports}></OnewayForm>
             }
             {
-              showForm.roundWay && <div>Under Constraction</div>
+              showForm.roundWay && <RoundWay data={ports}></RoundWay>
             }
             {
-              showForm.multiWay && <div>Under Constraction</div>
+              showForm.multiWay && <MultiLeg/>
             }
           </div>
         </div>

@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react'
 
-
-const OnewayForm = ({ data }) => {
+const RoundWay = ({data}) => {
   // use Reference for modals
   const formSugg = useRef(null)
   const [from, setFrom] = useState([]);
@@ -76,10 +75,9 @@ const OnewayForm = ({ data }) => {
 
     console.log(selected);
   }
-
   return (
     <>
-      <div className="py-4 md:flex md:justify-center md:gap-2">
+        <div className="py-4 md:flex md:justify-center md:gap-2">
         <div className="w-[336px] my-2 relative ">
           <input
             className="p-3 min-h-[44px] w-full border shadow-sm rounded-[30px] "
@@ -140,7 +138,7 @@ const OnewayForm = ({ data }) => {
             type="date"
             name="departure"
             placeholder="Departure"
-            value={selected.departure}
+            value={'selected.departure'}
             onChange={handleChange}
           />
         </div>
@@ -160,7 +158,7 @@ const OnewayForm = ({ data }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default OnewayForm;
+export default RoundWay
