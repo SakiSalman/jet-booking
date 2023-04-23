@@ -88,7 +88,7 @@ const RoundWay = ({data}) => {
             value={selected.from}
           />
           {from && (
-            <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50">
+            <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50 overflow-y-auto max-h-80">
               {from.map((data, index) => {
                 return (
                   <li
@@ -115,7 +115,7 @@ const RoundWay = ({data}) => {
             value={selected.to}
           />
           {to && (
-            <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md">
+            <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50 overflow-y-auto max-h-80">
               {to.map((data, index) => {
                 return (
                   <li

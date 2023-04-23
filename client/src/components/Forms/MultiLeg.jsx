@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { BsPlusLg, BsDashCircleDotted } from "react-icons/bs";
 
 const MultiLeg = ({ data }) => {
   const port = data
+  const [fromShow, setFromShow] = useState(false);
+  const [toShow, setToShow] = useState(false);
   const [from, setFrom] = useState([]);
   const [to, setTo] = useState([]);
   const [formValues, setFormValues] = useState([
     { from: "", to: "", date: "", guest: "" }
   ]);
+
     // Function for fitering data based on input value
     const createData = (word, data) => {
       const re = new RegExp(`${word.toLowerCase()}.*\\B`, "g");
@@ -53,38 +57,79 @@ const MultiLeg = ({ data }) => {
     setFormValues([...formValues, { from: "", to: "", date: "" }]);
   };
 
+  // Remove Fields
   let removeFormFields = (i) => {
     let newFormValues = [...formValues];
     newFormValues.splice(i, 1);
     setFormValues(newFormValues);
   };
 
+  // Update from Airtport value from sugesstions
+    const handleFromValue = (e, name, i) => {
+      
+      e.preventDefault();
+      let formData = [...formValues]
+
+      formData[i].from = name
+
+      setFormValues(formData)
+      setFrom([])
+      
+
+      
+    };
+  // Update from Airtport value from sugesstions
+    const handleToValue = (e, name, i) => {
+      
+      e.preventDefault();
+      let formData = [...formValues]
+
+      formData[i].to = name
+
+      setFormValues(formData)
+      setTo([])
+      setToShow(false)
+      
+    };
   let handleSubmit = (event) => {
     event.preventDefault();
-    alert(JSON.stringify(formValues));
+    formValues.map( (data, i) => {
+      if (i<1) {
+        if (!data.from || !data.to || !data.date || !data.guest) {
+         return alert('alert')
+        }
+      }
+      else{
+        if (!data.from || !data.to || !data.date) {
+          return alert('alert 2')
+         }
+      }
+     console.log( JSON.stringify(formValues));
+    })
   };
   return (
     <div className="py-3">
-      <form action="">
-        {formValues.map((data, index) => {
-          if (index == 0) {
+      <form action="" onSubmit={handleSubmit}>
+        {formValues.map((data, i) => {
+          if (i == 0) {
             return (
-              <div key={index} className=" md:flex md:justify-center md:gap-2">
+              <div key={i} className=" md:flex md:justify-center md:gap-2">
                 <div className="w-[336px] my-2 relative ">
                   <input
                     className="p-3 min-h-[44px] w-full border shadow-sm rounded-[30px] "
                     type="text"
                     name="from"
                     placeholder="From"
-                    onChange={(e) => handleChange(e, index)}
-                    value={formValues.from}
+                    onChange={(e) => handleChange(e, i)}
+                    value={formValues[i].from}
+                    onFocus={()=> setFromShow(true)}
                   />
-                  {/* {from && (
-                      <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50">
+                  {fromShow && (
+                      <ul className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50 overflow-y-auto max-h-80">
                         {from.map((data, index) => {
                           return (
                             <li
-                              onClick={(e) => handleFromValue(e, data.name)}
+                              onClick={(e) => handleFromValue(e, data.name, i)}
                               key={index}
                               className="block"
                             >
@@ -95,7 +140,7 @@ const MultiLeg = ({ data }) => {
                           );
                         })}
                       </ul>
-                    )} */}
+                    )}
                 </div>
                 <div className="w-[336px] my-2 relative">
                   <input
@@ -103,15 +148,17 @@ const MultiLeg = ({ data }) => {
                     type="text"
                     placeholder="To"
                     name="to"
-                    value={formValues.from}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].to}
+                    onChange={(e) => handleChange(e, i)}
+                    onFocus={()=> setToShow(true)}
+                    
                   />
-                  {/* {to && (
-                      <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md">
+                  {toShow && (
+                      <ul  className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md overflow-y-auto max-h-80">
                         {to.map((data, index) => {
                           return (
                             <li
-                              onClick={(e) => handleToValue(e, data.name)}
+                              onClick={(e) => handleToValue(e, data.name, i)}
                               key={index}
                               className="block"
                             >
@@ -122,7 +169,7 @@ const MultiLeg = ({ data }) => {
                           );
                         })}
                       </ul>
-                    )} */}
+                    )}
                 </div>
                 <div className="w-[336px] my-2">
                   <input
@@ -130,8 +177,8 @@ const MultiLeg = ({ data }) => {
                     type="date"
                     name="date"
                     placeholder="Departure"
-                    value={formValues.date}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].date}
+                    onChange={(e) => handleChange(e, i)}
                   />
                 </div>
                 <div className="w-[336px] my-2">
@@ -140,8 +187,8 @@ const MultiLeg = ({ data }) => {
                     type="number"
                     placeholder="Passengers"
                     name="guest"
-                    value={formValues.guest}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].guest}
+                    onChange={(e) => handleChange(e, i)}
                   />
                 </div>
               </div>
@@ -149,7 +196,7 @@ const MultiLeg = ({ data }) => {
           } else {
             return (
               <div
-                key={index}
+                key={i}
                 className=" md:flex md:justify-center md:gap-2 items-center"
               >
                 <div className="w-[336px] my-2 relative ">
@@ -158,15 +205,16 @@ const MultiLeg = ({ data }) => {
                     type="text"
                     name="from"
                     placeholder="From"
-                    value={formValues.from}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].from}
+                    onChange={(e) => handleChange(e, i)}
+                    onFocus={()=> setFromShow(true)}
                   />
-                  {/* {from && (
-                    <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50">
+                  {fromShow && (
+                    <ul className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md z-50">
                       {from.map((data, index) => {
                         return (
                           <li
-                            onClick={(e) => handleFromValue(e, data.name)}
+                            onClick={(e) => handleFromValue(e, data.name, i)}
                             key={index}
                             className="block"
                           >
@@ -177,7 +225,7 @@ const MultiLeg = ({ data }) => {
                         );
                       })}
                     </ul>
-                  )} */}
+                  )}
                 </div>
                 <div className="w-[336px] my-2 relative">
                   <input
@@ -185,15 +233,16 @@ const MultiLeg = ({ data }) => {
                     type="text"
                     placeholder="To"
                     name="to"
-                    value={formValues.to}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].to}
+                    onFocus={()=> setToShow(true)}
+                    onChange={(e) => handleChange(e, i)}
                   />
-                  {/* {to && (
-                    <ul ref={formSugg} className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md">
+                  {toShow && (
+                    <ul className="absolute top-[100%] left-0 w-[250px] shadow-md inline-block bg-white rounded-md">
                       {to.map((data, index) => {
                         return (
                           <li
-                            onClick={(e) => handleToValue(e, data.name)}
+                            onClick={(e) => handleToValue(e, data.name, i)}
                             key={index}
                             className="block"
                           >
@@ -204,7 +253,7 @@ const MultiLeg = ({ data }) => {
                         );
                       })}
                     </ul>
-                  )} */}
+                  )}
                 </div>
                 <div className="w-[336px] my-2">
                   <input
@@ -212,12 +261,12 @@ const MultiLeg = ({ data }) => {
                     type="date"
                     name="date"
                     placeholder="Departure"
-                    value={formValues.date}
-                    onChange={(e) => handleChange(e, index)}
+                    value={formValues[i].date}
+                    onChange={(e) => handleChange(e, i)}
                   />
                 </div>
                 <span
-                  onClick={(e) => removeFormFields(index)}
+                  onClick={(e) => removeFormFields(i)}
                   className="w-[336px] "
                 >
                   {" "}
@@ -233,7 +282,7 @@ const MultiLeg = ({ data }) => {
             {" "}
             <BsPlusLg className="text-4xl cursor-pointer hover:text-[#7f6337]"></BsPlusLg>
           </span>
-          <button className="text-white p-3 min-h-[44px] btn-brown hover:bg-[#856a3e] w-[150px] border shadow-sm rounded-[30px]">
+          <button className="text-white p-3 min-h-[44px] btn-brown hover:bg-[#856a3e] w-[150px] border shadow-sm rounded-[30px]" type="submit">
             Search
           </button>
         </div>
