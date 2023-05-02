@@ -90,7 +90,7 @@ const Experience = () => {
                 </div>
               </div>
               <div className="box p-4 mx-4 rounded-lg bg-white">
-                <img className='rounded-md' src="https://themeim.com/wp/flynext/wp-content/uploads/2021/11/photo-1576725386266-5c4b8c63da66-570x400.jpg" alt="" />
+                <img className='rounded-md' src="https://themeim.com/wp/flynext/wp-content/uploads/2021/11/photo-1576725386266-5c4b8c63da66-570x400.jpgf" alt="" />
                 <h3 className='text-3xl font-semibold pt-4'>Embraer P-300E</h3>
                 <h4 className='text-lg font-semibold py-4'>Legacy 600</h4>
                 <div className="price">
