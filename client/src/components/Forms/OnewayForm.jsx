@@ -21,7 +21,7 @@ const OnewayForm = ({ data }) => {
     return data.filter((item) => re.test(item.name.toLowerCase()));
   };
 
-  // Hanfler for search field
+  // Handler for search field
   const handleChange = (e) => {
     const value = e.target.value;
 
