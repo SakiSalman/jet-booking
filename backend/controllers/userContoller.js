@@ -1,6 +1,7 @@
 
 import Users from "../models/Users.js"
 import { createError } from "../utility/customError.js";
+import { hasPass } from "../utility/hasPassword.js";
 
 /**
  * @method GET
@@ -40,7 +41,7 @@ export const registerUser = async (req, res, next) => {
             return next(createError(401, 'All Fields Are Required!'))
             
         }
-
+        
         // get user with same email
         const existingUser = await Users.findOne({email})
 
@@ -48,13 +49,20 @@ export const registerUser = async (req, res, next) => {
             return next(createError(401, 'Account Already Exist Please Login!'))
 
         }
+        // Has Password
+        const hasPasword = await hasPass(password)
 
         // Create Unique User
         const user = await Users.create({
             ...req.body,
+            password : hasPasword
+        })
+
+        res.status(200).json({
+            user : user
         })
 
     } catch (error) {
-        
+        next(error)
     }
 }
