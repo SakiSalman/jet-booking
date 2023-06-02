@@ -13,10 +13,9 @@ export const users = async (req, res, next) => {
 
     try {
         const user = await Users.find()
-        console.log(user);
-
+       return res.json(user)
     } catch (error) {
-        
+       return next(error)
     }
 }
 
@@ -36,19 +35,16 @@ export const registerUser = async (req, res, next) => {
         phone,
         password} = req.body
 
-        if (!first_name, !last_name, !email, !phone, !password) {
-
-            return next(createError(401, 'All Fields Are Required!'))
+        if (!first_name, !last_name, !email, !phone, !password)return next(createError(401, 'All Fields Are Required!'))
             
-        }
+        
         
         // get user with same email
         const existingUser = await Users.findOne({email})
 
-        if (existingUser) {
-            return next(createError(401, 'Account Already Exist Please Login!'))
+        if (existingUser) return next(createError(401, 'Account Already Exist Please Login!'))
 
-        }
+        
         // Has Password
         const hasPasword = await hasPass(password)
 

@@ -14,6 +14,15 @@ const charterSchema = new mongoose.Schema(
       type: Array,
       default : ''
     },
+    
+    from: {
+      type: String,
+      trim : true
+    },
+    to: {
+      type: String,
+      trim : true
+    },
     regular_price: {
       type: String,
       trim: true,
@@ -21,6 +30,14 @@ const charterSchema = new mongoose.Schema(
     sale_price: {
       type: String,
       trim: true,
+    },
+    featured_image: {
+      type: String,
+      trim: true,
+    },
+    gallery: {
+      type: Array,
+      default: [],
     },
     seat: {
       type: String,
@@ -33,4 +50,4 @@ const charterSchema = new mongoose.Schema(
 );
 
 // export model
-export default mongoose.model("Charter", charterSchema);
+export default mongoose.model("Jets", charterSchema);

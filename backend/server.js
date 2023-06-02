@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import cors from "cors";
 import mongoConnection from './DB/db.js';
 import userRoute from "./routes/user.js";
+import jetsRoute from "./routes/jets.js";
 import errorHandler from './middlewares/errorHandler.js';
 
 
@@ -24,6 +25,7 @@ const PORT = process.env.PORT || 8000
 
 // routes
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/jet", jetsRoute);
 
 // Error Handler
 app.use(errorHandler)
