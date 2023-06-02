@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    password : {
+      type: String,
+      required: true,
+      trim: true,
+    },
     order: {
       type: Array,
       default : []
