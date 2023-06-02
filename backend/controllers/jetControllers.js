@@ -2,14 +2,13 @@ import { createError } from "../utility/customError.js";
 import Jets from '../models/Charter.js'
 /**
  * @method POST
- * @route "api/v1/user"
- * @purpose GET ALL USERS
+ * @route "api/v1/jet"
+ * @purpose Register New Jet
  */
 
 export const registerJet = async (req, res, next) => {
   try {
-    const { jet_name, routes, from, to, regular_price, sale_price, seat, featured_image } =
-      req.body;
+    const { jet_name, routes, from, to, regular_price, sale_price, seat, featured_image } =req.body;
 
     // Check all fields are required
     if ((!jet_name || !routes || !from || !to || !regular_price ||!sale_price || !seat || !featured_image ))
