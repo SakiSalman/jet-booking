@@ -7,7 +7,7 @@ import { createToken, verifyToken } from "../utility/token.js";
  * @method GET
  * @route "api/v1/user"
  * @purpose GET ALL USERS
- */
+*/
 
 export const users = async (req, res, next) => {
   try {
@@ -73,9 +73,8 @@ export const userLogin = async (req, res, next) => {
 
     // Verify Password
     const verifiedPass = await verifyPass(existingUser.password, password);
-    if (!verifiedPass) {
-      return next(createError(401, "Wrong Password!"));
-    }
+    if (!verifiedPass)return next(createError(401, "Wrong Password!"));
+    
     // Generate Login Token
     const token = createToken({ email: email }, "360d");
 

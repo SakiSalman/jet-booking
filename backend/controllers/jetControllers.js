@@ -23,3 +23,62 @@ export const registerJet = async (req, res, next) => {
     next(error);
   }
 };
+
+
+
+/**
+ * @method DELETE
+ * @route "api/v1/jets/:id"
+ * @purpose Delete Jet
+ */
+
+export const deleteJet = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const deletedData = await Jets.deleteOne({ _id: id });
+    if (deletedData.deletedCount < 1){
+        return res.status(400).json({
+            status: false,
+            message: "Jet Not Found!",
+          });
+    }
+    return res.status(200).json({
+        status: true,
+        message: "Jet Deleted Sucess!",
+      });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+/**
+ * @method PATCH
+ * @route "api/v1/jets/:id"
+ * @purpose Update Jet
+ */
+
+export const updateJet = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+
+    // chek the jet available
+    const jet = await Jets.findById(id)
+    if (!jet) next(createError(401, "All Fields Are Required!"));
+    
+    const updatedUser = await Users.findByIdAndUpdate(id, {
+        ...req.body
+    });
+
+    return res.status(200).json({
+        status: true,
+        user : updatedUser,
+        message: "Jet Updated!",
+      });
+
+  } catch (error) {
+    next(error);
+  }
+};
