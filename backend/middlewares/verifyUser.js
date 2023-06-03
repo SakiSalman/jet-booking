@@ -1,8 +1,14 @@
 import jwt from "jsonwebtoken"
 import { createError } from "../utility/customError.js"
+import Users from "../models/Users.js"
 
-export const verifyUser = (req, res, next) => {
 
+// user Verfication
+export const isUser = (req, res, next) => {
+
+    if (!req.headers.authorization) {
+        return next(createError(403, 'No Token Found!'))
+    }
     const token = req.headers.authorization.split(' ')[1]
     if (!token) {
      return next(createError(403, 'Unauthorized Token!'))
@@ -12,7 +18,21 @@ export const verifyUser = (req, res, next) => {
         if (err) {
             next(createError(404, 'Invalid User!'))
         }
+        req.decoded = decoded
+        next()
     })
 
-    next()
 }
+
+// Admin Verification
+export const isAdmin = async (req, res, next) => {
+
+    const email = req.decoded.email
+        const user = await Users.findOne({email})
+    if (!user?.isAdmin) {
+        return next(createError(401, 'You are not admin!'))
+    }
+    next()
+    
+}
+
