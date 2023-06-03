@@ -10,9 +10,9 @@ import errorHandler from './middlewares/errorHandler.js';
 
 // initialization app
 const app = express()
+
 // initalize dotenv
 dotenv.config()
-
 // initialize cors
 app.use(cors())
 // middlewares
