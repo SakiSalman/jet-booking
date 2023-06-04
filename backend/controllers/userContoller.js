@@ -324,3 +324,32 @@ export const updateUser = async (req, res, next) => {
     next(error);
   }
 };
+
+
+
+/**
+ * @method GET
+ * @route "api/v1/user/:id"
+ * @purpose Get Singel User
+ */
+
+export const getSingelUser = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const user = await Users.findById(id);
+    if (!user) {
+      return res.status(401).json({
+        status: false,
+        message: "User Not Found!",
+      });
+    }
+    return res.status(200).json({
+      status: true,
+      user : user,
+      message: "Singel User Get Success!",
+    });
+  } catch (error) {
+    next(error);
+  }
+};

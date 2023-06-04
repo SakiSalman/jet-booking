@@ -1,5 +1,5 @@
 import express from "express";
-import { activeAccount, deleteUser, logedInUser, registerUser, resetAccount, resetPassword, updateUser, userLogin, users } from '../controllers/userContoller.js'
+import { activeAccount, deleteUser, getSingelUser, logedInUser, registerUser, resetAccount, resetPassword, updateUser, userLogin, users } from '../controllers/userContoller.js'
 import { isAdmin, isUser } from "../middlewares/verifyUser.js";
  
 
@@ -9,6 +9,8 @@ const router = express.Router()
 router.get('/me', isUser, logedInUser)
 // delete rute
 router.delete('/:id',isUser, isAdmin, deleteUser)
+// get all user
+router.get('/:id', getSingelUser)
 // verify acount
 router.post('/active',activeAccount)
 // forgot password
