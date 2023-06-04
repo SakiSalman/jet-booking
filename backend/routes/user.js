@@ -1,5 +1,5 @@
 import express from "express";
-import { activeAccount, deleteUser, logedInUser, registerUser, updateUser, userLogin, users } from '../controllers/userContoller.js'
+import { activeAccount, deleteUser, logedInUser, registerUser, resetAccount, resetPassword, updateUser, userLogin, users } from '../controllers/userContoller.js'
 import { isAdmin, isUser } from "../middlewares/verifyUser.js";
  
 
@@ -11,6 +11,10 @@ router.get('/me', isUser, logedInUser)
 router.delete('/:id',isUser, isAdmin, deleteUser)
 // verify acount
 router.post('/active',activeAccount)
+// forgot password
+router.post('/forgot-password', resetAccount)
+// reset password
+router.post('/reset-password/:token', resetPassword)
 // update user
 router.patch('/:id',isUser, updateUser)
 // get all user

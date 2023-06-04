@@ -151,6 +151,115 @@ export const userLogin = async (req, res, next) => {
     next(error);
   }
 };
+
+/**
+ * @method POST
+ * @route "api/v1/user/forgot-password"
+ * @purpose Reset Password
+ */
+export const resetAccount = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    if ((!email))
+      return next(createError(401, "All Fields Are Required!"));
+
+    // get user with same email
+    const existingUser = await Users.findOne({ email });
+
+    if (!existingUser)
+      return next(createError(401, "No Account Found Please Register!"));
+
+    // check user is active or not
+    if (!existingUser.active) {
+      // send email to user
+      sendMail(existingUser.email, {
+        subject: "Verification Code Sent!",
+        body: `Hello ${existingUser.first_name} Your account is registered. please verify acount with ${existingUser.access_token} this code`,
+      });
+      return next(createError(401, "Verify code sent to email."));
+    }
+    // generate verify code
+    const verificationCode = verification_code(10000, 999999);
+
+    const updatedData = await Users.findByIdAndUpdate(existingUser._id, {
+      access_token : verificationCode
+    })
+      // send email to user
+      sendMail(updatedData.email, {
+        subject: "Verification Code Sent!",
+        body: `Hello ${updatedData.first_name} Your account is registered. please verify acount with ${verificationCode} this code`,
+      });
+      // Generate Login Token
+    const token = createToken({ email: updatedData.email }, "360d");
+
+    res.cookie("access_token", token).status(200).json({
+      user: updatedData,
+      message : 'Verification Code sent to email',
+      token : token
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+/**
+ * @method POST
+ * @route "api/v1/user/forgot-password"
+ * @purpose Reset Password
+ */
+export const resetPassword = async (req, res, next) => {
+  try {
+   const {token} = req.params
+   const {password} = req.body
+
+  //  verify token
+    const verify = verifyToken(token)
+
+
+    if (!verify) {
+
+      return next(401, 'Unauthorized Token. Please Forget Password Again.')
+      
+    }
+    const {email } = verify
+    if (!password)
+      return next(createError(401, "Enter Passowrd Please!"));
+
+    // get user with same email
+    const existingUser = await Users.findOne({ email });
+
+    if (!existingUser)
+      return next(createError(401, "No Account Found Please Register!"));
+
+    // check user is active or not
+    if (!existingUser.active) {
+      // send email to user
+      sendMail(existingUser.email, {
+        subject: "Verification Code Sent!",
+        body: `Hello ${existingUser.first_name} Your account is registered. please verify acount with ${existingUser.access_token} this code`,
+      });
+      return next(createError(401, "User is not active. Please acivate Now!"));
+    }
+
+    const hasedPass = await hasPass(password)
+
+    // update password
+    const updateData = await Users.findByIdAndUpdate(existingUser.id, {
+      password : hasedPass
+    })
+
+    res.cookie("access_token", token).status(200).json({
+      user: updateData,
+      message : 'Password Changed Successfully. Please Login!'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 /**
  * @method GET
  * @route "api/v1/user"
