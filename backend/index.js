@@ -24,6 +24,9 @@ app.use(express.urlencoded({extended: false}))
 const PORT = process.env.PORT || 8000
 
 // routes
+app.use("/api/v1/test", (req, res, next) => {
+    res.send('Working')
+});
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/jet", jetsRoute);
 
@@ -31,8 +34,8 @@ app.use("/api/v1/jet", jetsRoute);
 app.use(errorHandler)
 
 
-
-app.listen(PORT, () => {
-    console.log(`'Server Running' on port ${PORT}`.bgGreen.black)
-    mongoConnection()
+mongoConnection().then(()=> {
+    app.listen(PORT, () => {
+        console.log(`'Server Running' on port ${PORT}`.bgGreen.black)
+    })
 })
