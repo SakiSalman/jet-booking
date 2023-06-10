@@ -1709,11 +1709,11 @@ html.menu-opened body {
 	background-color: #19c1dc;
     color: #fff;
 }
-.sidebar-menu > ul > li.active > a:hover {
+.sidebar-menu > ul > li > a.active:hover {
     background-color: #19c1dc;
     color: #fff;
 }
-.sidebar-menu li.active a {
+.sidebar-menu li a.active {
     background-color: #00d0f1;
     color: #fff;
 }

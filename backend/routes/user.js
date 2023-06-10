@@ -4,7 +4,8 @@ import { isAdmin, isUser } from "../middlewares/verifyUser.js";
  
 
 const router = express.Router() 
-
+// get all user
+router.get('/all', users)
 // loged in route
 router.get('/me', isUser, logedInUser)
 // delete rute
@@ -19,8 +20,6 @@ router.post('/forgot-password', resetAccount)
 router.post('/reset-password/:token', resetPassword)
 // update user
 router.patch('/:id',isUser, updateUser)
-// get all user
-router.get('/all', users)
 // register user
 router.post('/register', registerUser)
 // login user

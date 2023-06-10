@@ -4,6 +4,7 @@ import Topbar from './Topbar'
 import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
+
   return (
     <>
     
@@ -18,6 +19,7 @@ const Dashboard = () => {
         {/* Side Bar end */}
   {/* Page Wrapper */}
   <div className="page-wrapper">
+    
     <Outlet></Outlet>
   </div>
   {/* /Page Wrapper */}

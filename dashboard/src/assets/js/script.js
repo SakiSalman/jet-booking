@@ -43,7 +43,7 @@ Version      : 1.0
 	
 	// Mobile menu sidebar overlay
 	
-	$('body').append('<div class="sidebar-overlay"></div>');
+	$('body').append('<div className="sidebar-overlay"></div>');
 	$(document).on('click', '#mobile_btn', function() {
 		$wrapper.toggleClass('slide-nav');
 		$('.sidebar-overlay').toggleClass('opened');

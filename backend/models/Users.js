@@ -30,6 +30,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    avatar : {
+
+      type : String,
+      default : null
+
+    },
     order: {
       type: Array,
       default : []
@@ -41,12 +47,12 @@ const userSchema = new mongoose.Schema(
     isAdmin : {
       type : Boolean,
       default : false
-    }
-    ,
+    },
     active: {
       type: Boolean,
       default : false
     },
+    
     access_token: {
       type: String,
       trim : true

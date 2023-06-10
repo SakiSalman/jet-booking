@@ -4,7 +4,6 @@ import Avatar from '../Profile/Avatar'
 import BlackLogo from '../../Logo/BloackLogo'
 
 const Topbar = () => {
-
   const [dropDown, setDropDown] = useState(false)
   return (
     <>

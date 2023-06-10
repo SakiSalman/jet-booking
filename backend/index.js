@@ -29,6 +29,7 @@ app.use("/api/v1/test", (req, res, next) => {
 });
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/jet", jetsRoute);
+app.use("/api/v1/orders", jetsRoute);
 
 // Error Handler
 app.use(errorHandler)
