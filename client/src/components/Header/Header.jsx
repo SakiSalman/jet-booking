@@ -37,50 +37,9 @@ const Header = () => {
 
             <nav className="hidden sm:block sm:flex w-full sm:w-auto mx-auto" id="main_menu">
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white">
-                  <li className="ml-0 sm:ml-8">
-                    <Link
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
-                      to="/experience"
-                    >
-                      Experience
-                    </Link>
-                  </li>
-
-                  <li className="ml-0 sm:ml-8">
-                    <Link
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
-                      to="/charter"
-                    >
-                      Charter
-                    </Link>
-                  </li>
-
-                  <li className="ml-0 sm:ml-8">
-                    <Link
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
-                      to="/shuttle"
-                    >
-                      Shuttole
-                    </Link>
-                  </li>
-
-                  <li className="ml-0 sm:ml-8">
-                    <Link
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
-                      to="/deals"
-                    >
-                      Deals
-                    </Link>
-                  </li>
-
-                  <li className="ml-0 sm:ml-8">
-                    <Link
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underlinee"
-                      to="/membership"
-                    >
-                      Membership
-                    </Link>
-                  </li>
+                    {
+                      menuList?.map((data, i) => <NavItem key={data.id} data={data}/>)
+                    }
                 </ul>
               </nav>
 
@@ -155,3 +114,41 @@ const Header = () => {
 }
 
 export default Header
+
+const NavItem = ({data}) => {
+
+  const {id, title, path} = data
+  return <li className="ml-0 sm:ml-8">
+  <Link
+    className="nav text-gray-100 hover:text-gray-200 transition-colors text-sm font-barlow font-thin no-underline"
+    to={path}
+  >
+    {title}
+  </Link>
+</li>
+}
+
+const menuList = [
+  {
+    id : 1,
+    title : 'Experience',
+    path : '/experience'
+  },
+  {
+    id : 2,
+    title : 'Charter',
+    path : '/charter'
+
+  },
+  {
+    id : 3,
+    title : "Deals",
+    path : '/deals'
+  },
+  {
+    id : 4,
+    title : "Membership",
+    path : '/membership'
+  },
+
+]

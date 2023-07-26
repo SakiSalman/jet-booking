@@ -7,7 +7,7 @@ import {
 import Layout from './Layouts/Layout';
 import Home from './Pages/Home/Home';
 import Experience from './Pages/Home/Experience/Experience';
-import Charter from './Pages/Charter/Charter';
+import Charter from './Pages/Charter/index';
 import Shuttle from './Pages/Shuttle/Shuttle';
 import Deals from './Pages/Home/Deals/Deals';
 import Membership from './Pages/Membership/Membership';

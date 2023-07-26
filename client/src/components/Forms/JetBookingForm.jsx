@@ -5,7 +5,9 @@ import RoundWay from "./RoundWay";
 import { useSelector } from "react-redux";
 import MultiLeg from "./MultiLeg";
 
-const JetBookingForm = () => {
+const JetBookingForm = ({cls, bgColor}) => {
+
+  console.log(cls);
 
   // get all ports
   const {ports} = useSelector(state => state.port)
@@ -20,44 +22,37 @@ const JetBookingForm = () => {
  
 
   const handleShowForm = (form) => {
-    if (form === 'oneway') {
-     return setShowForm({oneWay: true,
-      roundWay: false,
-      multiWay: false,})
-    }
-    if (form === 'roundway') {
-   return setShowForm({oneWay: false,
-      roundWay: true,
-      multiWay: false,})
+    setShowForm(
+      {oneWay: false,
+        roundWay: false,
+        multiWay: false,
+      }
+    )
+    setShowForm({
+      [form] : true
+    })
 
-    }
-    if (form === 'multiway') {
-   return setShowForm({oneWay: false,
-      roundWay: false,
-      multiWay: true,})
-    }
   }
 
   return (
     <>
-      <div className="form-wrapper md:bg-[#f5f3f1]">
-        <div className="p-2 form-item-wrapper md:p-8 md:flex md:justify-center md:flex-col  ">
-          <div className="bg-white md:w-6/12 md:mt-[-90px]  p-4 md:py-20 md:p-8 md:rounded-2xl md:mx-auto">
+      <div className={`bg-[${bgColor}]`}>
+        <div className="p-2 form-item-wrapper md:p-10 md:flex md:justify-center md:flex-col  ">
+          <div className={`bg-white md:w-7/12 p-4 md:py-20 md:rounded-2xl md:mx-auto ${cls}`}>
             <div className="flex flex-wrap justify-between">
-              <div className="text-black py-2 text-lg text-amber-600 uppercase">
+              <div className="py-2 text-lg text-black uppercase">
                 Book a charter Flight!
               </div>
 
               <div className="text-black flex flex-row gap-2">
-                <div onClick={() => handleShowForm('oneway')} className={showForm.oneWay ? 'text-white font-normal relative border px-3 py-2 rounded-3xl bg-amber-600 cursor-pointer' :' text-black font-normal relative border px-3 py-2 rounded-3xl cursor-pointer'}>
-                  One Way
-                </div>
-                <div  onClick={() => handleShowForm('roundway')} className={showForm.roundWay ? 'text-white font-normal relative border px-3 py-2 rounded-3xl bg-amber-600 cursor-pointer' :' text-black font-normal relative border px-3 py-2 rounded-3xl cursor-pointer'}>
-                  Round Way
-                </div>
-                <div onClick={() => handleShowForm('multiway')} className={showForm.multiWay ? 'text-white font-normal relative border px-3 py-2 rounded-3xl bg-amber-600 cursor-pointer' :' text-black font-normal relative border px-3 py-2 rounded-3xl cursor-pointer'}>
-                  Multi Flight
-                </div>
+                {
+                  formData?.map( (data, i) => 
+                  {
+                    return <div key={i} onClick={() => handleShowForm(data.key)} className={ showForm[data.key] ? 'text-white font-normal relative border px-3 py-2 text-[10px] md:text-sm rounded-3xl bg-amber-600 cursor-pointer' :' text-black font-normal relative border px-3 py-2 rounded-3xl cursor-pointer text-[10px] md:text-sm'}>
+                    {data.title}
+                  </div>
+                  })
+                }
               </div>
             </div>
             {
@@ -77,3 +72,24 @@ const JetBookingForm = () => {
 };
 
 export default JetBookingForm;
+
+
+
+const formData = [
+  {
+    id : 1,
+    title : 'One Way',
+    key : "oneWay"
+  },
+  {
+    id : 2,
+    title : 'Round Way',
+    key : "roundWay"
+  },
+  {
+    id : 2,
+    title : 'Multi Flight',
+    key : "multiWay"
+  },
+
+]

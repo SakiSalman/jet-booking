@@ -6,10 +6,10 @@ const Home = () => {
   return (
     <div>
     <HomeBannar></HomeBannar>
-    <JetBookingForm></JetBookingForm>
+    <JetBookingForm cls={'mt-[-90px]'} bgColor={'#f5f3f1'}></JetBookingForm>
       {/* Business jet Start*/}
-      <section className="bg-[#f5f3f1]">
-        <div className="container mx-auto py-24 px-4 sm:px-0">
+      <section className="bg-[#f5f3f1] ">
+        <div className="container mx-auto py-10 lg:py-20 px-4 sm:px-0">
           <div className="sm:w-2/3 mx-auto">
             <h2 className="text-center">
               Private Jet for Business and Leisure Purposes
@@ -61,7 +61,7 @@ const Home = () => {
             </div>
 
             <div className="basis-2/5 sm:pl-24 mt-14">
-              <div className="pb-12">
+              <div className="lg:pb-12">
                 <h3 className="text-[22px] font-bold mb-4">
                   PRIVATE JET CHARTER
                 </h3>
@@ -85,7 +85,7 @@ const Home = () => {
 
       {/* Private jet Start*/}
       <section>
-        <div className="container mx-auto py-24">
+        <div className="container mx-auto py-10 lg:py-20">
           <div className="sm:w-2/3 mx-auto">
             <h2 className="text-center">
               Private Jet Performance and Specifications
@@ -130,7 +130,7 @@ const Home = () => {
                   experience as luxurious and comfortable as possible.
                 </p>
               </div>
-              <div className="pb-12">
+              <div className="lg:pb-12">
                 <h3 className="text-[22px] font-bold mb-4">
                   LUXURY AND COMFORT
                 </h3>
@@ -143,84 +143,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Private jet End*/}
-
-      {/* Form start */}
-
-      {/* <section className='py-20'>
-       <div className="container mx-auto">
-           <form action="" className='flex justify-between items-center gap-4'>
-               <div className='basis-1/4'>
-               <label
-                 htmlFor="first-name"
-                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-               >
-                 First Name<i className='bx bx-child'></i>
-               </label>
-               <input
-                 type="text"
-                 id="first-name"
-                 name="firstName"
-                 className="appearance-none block w-full bg-gray-200 text-gray-700 border 
-                 border-gray-200 rounded py-3 px-5 leading-tight focus:outline-none 
-                 focus:bg-white focus:border-gray-500" placeholder='First Name' 
-               />
-               </div>
-               <div className='basis-1/4'>
-               <label
-                 htmlFor="first-name"
-                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-               >
-                 First Name
-               </label>
-               <input
-                 type="text"
-                 id="first-name"
-                 name="firstName"
-                 className="appearance-none block w-full bg-gray-200 text-gray-700 border 
-                 border-gray-200 rounded py-3 px-5 leading-tight focus:outline-none 
-                 focus:bg-white focus:border-gray-500" placeholder='First Name'
-               />
-               </div>
-               <div className='basis-1/4'>
-               <label
-                 htmlFor="first-name"
-                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-               >
-                 First Name
-               </label>
-               <input
-                 type="text"
-                 id="first-name"
-                 name="firstName"
-                 className="appearance-none block w-full bg-gray-200 text-gray-700 border 
-                 border-gray-200 rounded py-3 px-5 leading-tight focus:outline-none 
-                 focus:bg-white focus:border-gray-500"
-               />
-               </div>
-               <div className='basis-1/4'>
-               <label
-                 htmlFor="first-name"
-                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-               >
-                 First Name
-               </label>
-               <input
-                 type="text"
-                 id="first-name"
-                 name="firstName"
-                 className="appearance-none block w-full bg-gray-200 text-gray-700 border 
-                 border-gray-200 rounded py-3 px-5 leading-tight focus:outline-none 
-                 focus:bg-white focus:border-gray-500"
-               />
-               </div>
-           </form>
-       </div>
-   </section> */}
-      {/* Form End */}
+      {/* Private jet End*/}     
 
       {/* <!-- Banner Area Start--> */}
-      <section className="py-36 bg-black flex items-center w-full h-96 text-white bg-no-repeat bg-cover relative">
+      <section className="py-10 lg:py-20 bg-black flex items-center w-full h-96 text-white bg-no-repeat bg-cover relative">
         <img
           className="w-full h-96 absolute mix-blend-overlay object-cover bg-blend-darken"
           src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/world-map-5.svg"
@@ -228,12 +154,11 @@ const Home = () => {
         />
 
         <div className="container mx-auto flex items-center justify-between flex-col sm:flex-row">
-          <div className="content mx-auto">
-            <h2 className="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white font-barlow uppercase">
-              {" "}
+          <div className="mx-auto">
+            <h2 className="text-3xl md:text-6xl text-center text-white font-barlow uppercase">
               A new class of possibilities.
             </h2>
-            <p className="text-[18px] text-white my-[40px] text-center mx-auto w-3/4 mb-8 font-opensans ">
+            <p className="text-[18px] text-white my-[40px] text-center mx-auto lg:w-3/4 mb-8 font-opensans ">
               The fastest growing private jet company in the world
             </p>
             <p className="text-center pt-4">
@@ -248,8 +173,8 @@ const Home = () => {
       {/* <!-- Banner Area End--> */}
 
       {/* Learn More About Start */}
-      <section className="py-16">
-        <div className="container pb-12 w-2/3 mx-auto">
+      <section className="py-10 lg:py-20">
+        <div className="container pb-12 md:w-2/3 mx-auto">
           <h2>Learn More About Our Premium Jet Card Program</h2>
         </div>
         <div className="container mx-auto sm:flex flex-row justify-between sm:flex-row gap-4">
@@ -362,7 +287,7 @@ const Home = () => {
       <section className="pb-16">
         <div className="container mx-auto">
           <div>
-            <h2 className="text-left mb-8 ml-3">Luxury Charters</h2>
+            <h2 className="text-center md:text-left mb-8 ml-3">Luxury Charters</h2>
           </div>
           <div className="luxury sm:flex flex-row">
             <div className="luxury-card text-center mx-auto px-4 basis-1/4">
