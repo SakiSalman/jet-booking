@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUsers, registerUser } from "./usersApi";
+import { delateUser, fetchUsers, registerUser } from "./usersApi";
 
 export const usersSlice = createSlice({
   name: "users",
@@ -33,6 +33,13 @@ export const usersSlice = createSlice({
     // Register slice
     .addCase(registerUser.fulfilled, (state, {type, payload}) => {
        state.users = [...state.users, payload.user]
+    })    
+    // Delete slice
+    .addCase(delateUser.fulfilled, (state, {type, payload}) => {
+       console.log(payload);
+    })    
+    .addCase(delateUser.rejected, (state, {type, payload}) => {
+       console.log(payload);
     })    
 
   },

@@ -74,7 +74,6 @@ const OnewayForm = ({ data }) => {
       return alert('Total Guest is Required')
     }
 
-    console.log(selected);
   }
 
   return (

@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import Avatar from "../../../Profile/Avatar";
+import { useDispatch } from "react-redux";
+import { delateUser } from "../../../../../features/users/usersApi";
 
 const UsersTable = ({ data: user }) => {
+  const dispatch = useDispatch();
 
-    const [active, setActive] = useState(user.active)
+  const [active, setActive] = useState(user.active);
 
-    
+  // delete user
+  const handleDelete = (id) => {
+    dispatch(delateUser(id))
+    .then(res => console.log(res.data))
+  };
   return (
     <>
       <tr>
@@ -24,7 +31,11 @@ const UsersTable = ({ data: user }) => {
         <td>
           <div className="row">
             <div className="col-xl-4 col-md-4 col-sm-12 col-12">
-              <a href="#" className="btn btn-danger btn-sm">
+              <a
+                href="#"
+                className="btn btn-danger btn-sm"
+                onClick={() => handleDelete(user._id)}
+              >
                 <i className="fa fa-trash-o" aria-hidden="true"></i>
               </a>
               &nbsp;

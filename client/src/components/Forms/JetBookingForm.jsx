@@ -10,7 +10,6 @@ const JetBookingForm = () => {
   // get all ports
   const {ports} = useSelector(state => state.port)
 
-  console.log(ports);
   // get all ports
   const [airPorts, setAirPorts] = useState([]);
   const [showForm, setShowForm] = useState({

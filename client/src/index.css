@@ -22,3 +22,6 @@
 h2{
     @apply text-3xl sm:text-5xl mx-auto text-center mt-5 text-black font-barlow
 }
+a{
+    text-decoration: none;
+}

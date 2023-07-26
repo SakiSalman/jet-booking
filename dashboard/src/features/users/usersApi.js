@@ -26,3 +26,18 @@ export const registerUser = createAsyncThunk(
     
   }
 )
+// Register user
+export const delateUser = createAsyncThunk(
+    'users/delete',
+  async (data, {rejectWithValue}) => {
+   try {
+    const res = await axios.delete(`https://jetbooking.vercel.app/api/v1/user/${data}`)
+    console.log(res.data);
+    return res.data
+   } catch (error) {
+    console.log(error.response.data.message);
+    return toast('warn', error.response.data.message)
+   }
+    
+  }
+)

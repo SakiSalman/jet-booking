@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,6 +13,10 @@ import Deals from './Pages/Home/Deals/Deals';
 import Membership from './Pages/Membership/Membership';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
+import Login from './Pages/auth/Login';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Register from './Pages/auth/Register';
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -48,6 +51,14 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path : '/login',
+    element : <Login></Login>
+  },
+  {
+    path : '/register',
+    element : <Register></Register>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

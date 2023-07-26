@@ -39,7 +39,7 @@ const Header = () => {
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white">
                   <li className="ml-0 sm:ml-8">
                     <Link
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       to="/experience"
                     >
                       Experience
@@ -48,7 +48,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <Link
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       to="/charter"
                     >
                       Charter
@@ -57,7 +57,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <Link
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       to="/shuttle"
                     >
                       Shuttole
@@ -66,7 +66,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <Link
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       to="/deals"
                     >
                       Deals
@@ -75,7 +75,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <Link
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlowe"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underlinee"
                       to="/membership"
                     >
                       Membership
@@ -89,7 +89,7 @@ const Header = () => {
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white px-5">
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       href="#"
                     >
                       Experience
@@ -98,7 +98,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       href="#"
                     >
                       Charter
@@ -107,7 +107,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       href="#services"
                     >
                       Shuttole
@@ -116,7 +116,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlow"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
                       href="#brand"
                     >
                       Deals
@@ -125,8 +125,8 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-400 hover:text-gray-200 transition-colors text-lg font-barlowe"
-                      href="#portfolio"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      href="#"
                     >
                       Membership
                     </a>
@@ -138,10 +138,10 @@ const Header = () => {
             <div className="hidden sm:block">
               <ul className="flex items-center justify-end py-3 text-white gap-6">
                 <li>
-                  <a href="#">Sing Up</a>
+                  <Link to="/login" className='text-gray-100 no-underline hover:text-sky-100'>Sing Up</Link>
                 </li>
                 <li>
-                  <a href="#">Log In</a>
+                  <a href="#"  className='text-gray-100 no-underline hover:text-sky-100'>Log In</a>
                 </li>
               </ul>
             </div>
