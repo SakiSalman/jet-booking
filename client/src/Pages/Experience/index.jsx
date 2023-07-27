@@ -1,6 +1,6 @@
 import React from 'react'
-import ExperienceCard from '../../../components/Experience/ExperienceCard'
-import TopBannar from '../../../components/TopBannar/TopBannar'
+import ExperienceCard from '../../components/Experience/ExperienceCard'
+import TopBannar from '../../components/TopBannar/TopBannar'
 
 const Experience = () => {
   return (

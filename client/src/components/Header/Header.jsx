@@ -94,15 +94,8 @@ const Header = () => {
               </nav>
             )}
 
-            <div className="hidden sm:block">
-              <ul className="flex items-center justify-end py-3 text-white gap-6">
-                <li>
-                  <Link to="/login" className='text-gray-100 no-underline hover:text-sky-100'>Sing Up</Link>
-                </li>
-                <li>
-                  <a href="#"  className='text-gray-100 no-underline hover:text-sky-100'>Log In</a>
-                </li>
-              </ul>
+            <div className="hidden sm:block lg:flex items-center justify-end py-3 text-white gap-6">
+            <button className='text-gray-100 no-underline hover:text-sky-100'>Sing in</button>
             </div>
           </div>
         </div>

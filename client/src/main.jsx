@@ -5,18 +5,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from './Layouts/Layout';
-import Home from './Pages/Home/Home';
-import Experience from './Pages/Home/Experience/Experience';
-import Charter from './Pages/Charter/index';
-import Shuttle from './Pages/Shuttle/Shuttle';
-import Deals from './Pages/Home/Deals/Deals';
-import Membership from './Pages/Membership/Membership';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
 import Login from './Pages/auth/Login';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Register from './Pages/auth/Register';
 import './index.css'
+import Home from './Pages/Home';
+import Experience from './Pages/Experience';
+import Charter from './Pages/Charter';
+import Shuttle from './Pages/Shuttle';
+import Deals from './Pages/Deals';
+import Membership from './Pages/Membership';
+
 
 const router = createBrowserRouter([
   {
@@ -50,14 +50,9 @@ const router = createBrowserRouter([
         element : <Membership></Membership>
       }
     ]
-  },
-  {
-    path : '/login',
-    element : <Login></Login>
-  },
-  {
-    path : '/register',
-    element : <Register></Register>
+  },{
+    path : '*',
+    element : 'Page not Found'
   }
 ]);
 

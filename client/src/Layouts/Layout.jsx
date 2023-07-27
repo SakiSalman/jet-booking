@@ -7,6 +7,9 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { getUSers } from '../Redux/auth/authActions'
 import Cookies from 'js-cookie'
+import Modal from '../components/Modals/Modal'
+import Login from '../Pages/auth/Login'
+import Register from '../Pages/auth/Register'
 
 const Layout = () => {
   const dispatch = useDispatch()
@@ -46,12 +49,10 @@ const Layout = () => {
   
   return (
     <>
-
         <Header></Header>
         <Outlet></Outlet>
-        <Footer></Footer>
-    
-    
+
+        <Footer></Footer>    
     </>
   )
 }

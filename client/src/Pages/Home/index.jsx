@@ -1,12 +1,13 @@
 import React from "react";
-import HomeBannar from "../../components/Bannar/HomeBannar";
 import JetBookingForm from "../../components/Forms/JetBookingForm";
-
+import { motion } from "framer-motion"
+import HomeBannar from "./Bannar/HomeBannar";
 const Home = () => {
   return (
     <div>
-    <HomeBannar></HomeBannar>
-    <JetBookingForm cls={'mt-[-90px]'} bgColor={'#f5f3f1'}></JetBookingForm>
+      <HomeBannar></HomeBannar>
+     
+      <JetBookingForm cls={'mt-[-90px]'} bgColor={'#f5f3f1'}></JetBookingForm>
       {/* Business jet Start*/}
       <section className="bg-[#f5f3f1] ">
         <div className="container mx-auto py-10 lg:py-20 px-4 sm:px-0">
@@ -115,10 +116,17 @@ const Home = () => {
             </div>
 
             <div className="basis-2/4">
-              <img
-                src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-1-927x1024.jpg"
-                alt=""
-              />
+              <motion.div
+                initial={{ y: "300px" }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 1.2 }}
+              >
+                <img
+                  src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-1-927x1024.jpg"
+                  alt=""
+                />
+              </motion.div>
+
             </div>
             <div className="sm:basis-1/4 sm:pl-12">
               <div className="pb-12">
@@ -143,7 +151,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Private jet End*/}     
+      {/* Private jet End*/}
 
       {/* <!-- Banner Area Start--> */}
       <section className="py-10 lg:py-20 bg-black flex items-center w-full h-96 text-white bg-no-repeat bg-cover relative">
@@ -352,11 +360,21 @@ const Home = () => {
       {/* Luxury charters End */}
 
       <div className="footer-top mx-auto">
-        <img
-          className="mx-auto w-3/6"
-          src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-side-768x240.jpg"
-          alt=""
-        />
+        <motion.div
+          initial={{ x: "-1000px" }}
+          whileInView={{ x: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+
+          <img
+            className="mx-auto w-3/6"
+            src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-side-768x240.jpg"
+            alt=""
+          />
+
+
+        </motion.div>
+
       </div>
     </div>
   );

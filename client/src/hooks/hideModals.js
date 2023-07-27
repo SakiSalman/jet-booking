@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 const usePopupClose = (ref, setRef) => {
+
+  
     useEffect(() => {
       document.addEventListener("mousedown", function (e) {
         if (ref.current && !ref?.current?.contains(e.target)) {
@@ -8,6 +10,9 @@ const usePopupClose = (ref, setRef) => {
         }
       });
     }, [ref.current]);
+
+
+
   };
   
   export default usePopupClose;

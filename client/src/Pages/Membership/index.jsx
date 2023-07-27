@@ -35,7 +35,7 @@ const Membership = () => {
 
       <section className="py-20 flex items-center">
         <h3>Elite Jet</h3>
-        <div className="border border-2 border-blue-950 p-3 rounded-md">
+        <div className="border-2 border-blue-950 p-3 rounded-md">
           <h6 className="text-sm text-purple-800">Prefered Access</h6>
           <p className="text-xs text-">Full Access To Flights and exclusive members only benifits</p>
         </div>
