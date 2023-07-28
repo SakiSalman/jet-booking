@@ -2,6 +2,7 @@ import React from "react";
 import JetBookingForm from "../../components/Forms/JetBookingForm";
 import { motion } from "framer-motion"
 import HomeBannar from "./Bannar/HomeBannar";
+import Luxury from "../../components/Cards/Luxury";
 const Home = () => {
   return (
     <div>
@@ -26,7 +27,7 @@ const Home = () => {
               />
             </div>
             <div className="basis-2/5">
-              <div className="pb-12 order-2 sm:order-1">
+              <div className="pb-12 order-2 sm:order-1 md:pl-10">
                 <h3 className="text-[22px] font-bold mb-4">
                   PRIVATE JET CHARTER
                 </h3>
@@ -85,15 +86,16 @@ const Home = () => {
       {/* Business jet End*/}
 
       {/* Private jet Start*/}
+      
       <section>
-        <div className="container mx-auto py-10 lg:py-20">
+        <div className="_container mx-auto py-10 lg:py-20">
           <div className="sm:w-2/3 mx-auto">
             <h2 className="text-center">
               Private Jet Performance and Specifications
             </h2>
           </div>
 
-          <div className="performance flex-row px-6 sm:px-0 sm:flex items-center pt-12">
+          <div className="performance flex-row lg:px-6 sm:px-0 sm:flex items-center py-12">
             <div className="sm:basis-1/4">
               <div className="pb-12">
                 <h3 className="text-[22px] font-bold mb-4">
@@ -154,16 +156,10 @@ const Home = () => {
       {/* Private jet End*/}
 
       {/* <!-- Banner Area Start--> */}
-      <section className="py-10 lg:py-20 bg-black flex items-center w-full h-96 text-white bg-no-repeat bg-cover relative">
-        <img
-          className="w-full h-96 absolute mix-blend-overlay object-cover bg-blend-darken"
-          src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/world-map-5.svg"
-          alt=""
-        />
-
-        <div className="container mx-auto flex items-center justify-between flex-col sm:flex-row">
+      <section className=" py-10 lg:py-20 bg-black flex items-center w-full h-96 text-white bg-no-repeat bg-cover relative">
+        <div className="mx-auto flex items-center justify-between flex-col sm:flex-row">
           <div className="mx-auto">
-            <h2 className="text-3xl md:text-6xl text-center text-white font-barlow uppercase">
+            <h2 className="text-3xl md:text-6xl text-center text-white  uppercase m-0">
               A new class of possibilities.
             </h2>
             <p className="text-[18px] text-white my-[40px] text-center mx-auto lg:w-3/4 mb-8 font-opensans ">
@@ -182,10 +178,10 @@ const Home = () => {
 
       {/* Learn More About Start */}
       <section className="py-10 lg:py-20">
-        <div className="container pb-12 md:w-2/3 mx-auto">
-          <h2>Learn More About Our Premium Jet Card Program</h2>
+        <div className="_container pb-12 md:w-2/3 mx-auto">
+          <h2 className=" mb-3 lg:mb-0">Learn More About Our Premium Jet Card Program</h2>
         </div>
-        <div className="container mx-auto sm:flex flex-row justify-between sm:flex-row gap-4">
+        <div className="_container mx-auto sm:flex flex-row justify-between sm:flex-row gap-4">
           <div className="img_div sm:basis-1/3 basis-1/1 flex items-center">
             <img
               className="w-[100%] px-3 sm:px-0 sm:pb-0 pb-7 mx-0 sm:mx-12 z-50 center shadow-2xl"
@@ -293,81 +289,29 @@ const Home = () => {
 
       {/* Luxury charters Start */}
       <section className="pb-16">
-        <div className="container mx-auto">
+        <div className="_container mx-auto">
           <div>
             <h2 className="text-center md:text-left mb-8 ml-3">Luxury Charters</h2>
           </div>
-          <div className="luxury sm:flex flex-row">
-            <div className="luxury-card text-center mx-auto px-4 basis-1/4">
-              <img
-                className="mx-auto w-[100%]"
-                src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/feather-plane-1-300x300.jpg"
-                alt=""
-              />
-              <h3 className="text-lg font-bold mt-8">PRIVATE JET</h3>
-              <p className="mx-2 text-center mt-2 text-[20px] text-[#a8987e]">
-                {" "}
-                <a className="" href="#">
-                  An Air Curly private charter guarantees your privacy
-                </a>{" "}
-              </p>
-            </div>
-            <div className="luxury-card text-center mx-auto px-4 basis-1/4 py-10 sm:py-0">
-              <img
-                className="mx-auto w-[100%]"
-                src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/light-jet-300x300.jpg"
-                alt=""
-              />
-              <h3 className="text-lg font-bold mt-8">PRIVATE JET</h3>
-              <p className="mx-2 text-center mt-2 text-[20px] text-[#a8987e]">
-                {" "}
-                <a className="" href="#">
-                  An Air Curly private charter guarantees your privacy
-                </a>{" "}
-              </p>
-            </div>
-            <div className="luxury-card text-center mx-auto px-4 basis-1/4">
-              <img
-                className="mx-auto w-[100%]"
-                src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/helicopter-1-300x300.jpg"
-                alt=""
-              />
-              <h3 className="text-lg font-bold mt-8">PRIVATE JET</h3>
-              <p className="mx-2 text-center mt-2 text-[20px] text-[#a8987e]">
-                {" "}
-                <a className="" href="#">
-                  An Air Curly private charter guarantees your privacy
-                </a>{" "}
-              </p>
-            </div>
-            <div className="luxury-card text-center mx-auto px-4 basis-1/4 py-10 sm:py-0">
-              <img
-                className="mx-auto w-[100%]"
-                src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/large-plane-1-300x300.jpg"
-                alt=""
-              />
-              <h3 className="text-lg font-bold mt-8">PRIVATE JET</h3>
-              <p className="mx-2 mt-2 text-center text-[20px] text-[#a8987e]">
-                {" "}
-                <a className="" href="#">
-                  An Air Curly private charter guarantees your privacy
-                </a>{" "}
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {
+              [...Array(4)].map((_, i) => <Luxury key={i}/>)
+            }
           </div>
         </div>
       </section>
       {/* Luxury charters End */}
 
-      <div className="footer-top mx-auto">
+      <div className="mx-auto">
+
         <motion.div
-          initial={{ x: "-1000px" }}
+          initial={{ x: window.innerWidth > "600px" ? '-1000px' : '-80px' }}
           whileInView={{ x: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1 }}
         >
 
           <img
-            className="mx-auto w-3/6"
+            className="object-cover w-[300px] lg:w-[750px] mx-auto"
             src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/plane-side-768x240.jpg"
             alt=""
           />

@@ -5,8 +5,7 @@ const Header = () => {
   return (
     <>
         <header>
-        <div className="px-3">
-          <div className="container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto ">
+          <div className="_container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto">
             <div className="">
               <div className="logo flex justify-between items-center">
                 <Link to="/">
@@ -48,7 +47,7 @@ const Header = () => {
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white px-5">
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
                       href="#"
                     >
                       Experience
@@ -57,7 +56,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
                       href="#"
                     >
                       Charter
@@ -66,7 +65,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
                       href="#services"
                     >
                       Shuttole
@@ -75,7 +74,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
                       href="#brand"
                     >
                       Deals
@@ -84,7 +83,7 @@ const Header = () => {
 
                   <li className="ml-0 sm:ml-8">
                     <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg font-barlow font-thin no-underline"
+                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
                       href="#"
                     >
                       Membership
@@ -98,7 +97,6 @@ const Header = () => {
             <button className='text-gray-100 no-underline hover:text-sky-100'>Sing in</button>
             </div>
           </div>
-        </div>
       </header>
     
     
@@ -113,7 +111,7 @@ const NavItem = ({data}) => {
   const {id, title, path} = data
   return <li className="ml-0 sm:ml-8">
   <Link
-    className="nav text-gray-100 hover:text-gray-200 transition-colors text-sm font-barlow font-thin no-underline"
+    className="nav text-gray-100 hover:text-gray-200 transition-colors text-sm  font-thin no-underline"
     to={path}
   >
     {title}
