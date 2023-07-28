@@ -1,22 +1,29 @@
 import React from 'react'
+import TopBannar from '../../components/TopBannar/TopBannar'
 
 const Deals = () => {
   return (
-    <div>{/* Banner Start */}
-    <section className="py-52 flex items-center mt-[-90px] sm:mt-[-90px] text-white bg-no-repeat bg-cover" style={{ backgroundImage: "url(https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/header-random-1.jpg?id=231)" }}>
-       <div className="container mx-auto flex items-center justify-between flex-col sm:flex-row" >
-         <div className="content mx-auto">
-           <h1 className="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white font-barlow uppercase"> Deals</h1>
-           <ul className='flex gap-4 justify-center mt-6'>
-             <li><a href="#">Home</a></li>
-             <li>-</li>
-             <li><a href="#">Deals</a></li>
-           </ul>
-         </div>
-       </div>
-     </section>
-{/* Banner End */}
-</div>
+    <div>
+      {/* Banner Start */}
+      <TopBannar
+        bgImage={'https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/header-random-1.jpg?id=231'}
+        title={'Deals'}
+        breadCumb={'Deals'}
+      />
+      {/* Banner End */}
+
+
+      <div className="_container py-10">
+        <div className='text-center lg:w-3/5 mx-auto'>
+          <h1 className='text-4xl font-medium' >Deals</h1>
+          <p className='text-lg:text-xl'>Choose from one of our One Way Deals below and the entire aircraft and all seats are yours. Fly to major destinations on various category size aircraft from the FlyBLACK Fleet. Check back often as our Deals are continuously updated.</p>
+        </div>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+
+      </div>
+
+    </div>
   )
 }
 

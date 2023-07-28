@@ -13,7 +13,7 @@ const Membership = () => {
       >
         <div className="container mx-auto flex items-center justify-between flex-col sm:flex-row">
           <div className="content mx-auto">
-            <h1 className="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white font-barlow uppercase">
+            <h1 className="text-3xl sm:text-6xl mx-auto text-center mt-5 text-white  uppercase">
               {" "}
               Membership
             </h1>
