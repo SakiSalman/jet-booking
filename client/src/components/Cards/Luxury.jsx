@@ -1,8 +1,7 @@
 import React from 'react'
-
 const Luxury = () => {
   return (
-    <div className="luxury-card text-center mx-auto basis-1/4 border rounded-md overflow-hidden">
+    <div className={`text-center mx-auto basis-1/4 border rounded-md overflow-hidden`}>
     <img
       className="mx-auto w-full"
       src="https://demo.curlythemes.com/private-jet/wp-content/uploads/sites/27/2018/03/feather-plane-1-300x300.jpg"
