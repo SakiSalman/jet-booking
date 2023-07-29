@@ -1,12 +1,15 @@
 import React from "react";
 import SocialLogin from "../../components/Buttons/SocialLogin";
-import { Link } from "react-router-dom";
+import usePopupToggle from "../../hooks/hideModals";
+import { BsXLg } from "react-icons/bs";
 
-const Register = () => {
+const Register = ({setShowLogin}) => {
+  const {handlePopup, closeRef} = usePopupToggle()
+
   return (
-    <div>
-      <div className="_container">
-        <div className="w-[500px] bg-white rounded-sm p-8 mx-auto">
+    <>
+      <div className="w-[500px] bg-white rounded-sm p-8 mx-auto relative">
+      <span ref={closeRef} className="absolute top-4 right-4 w-8 h-8 border rounded-full p-2 flex justify-center cursor-pointer items-center modal-close" onClick={handlePopup}><BsXLg className="modal-close"/></span>
           <h3 className="text-center text-3xl">Register</h3>
           <div class="mt-5">
             <input
@@ -66,18 +69,17 @@ const Register = () => {
           <div className="navigate-ara">
             <p className="text-center">
               Did not Registration?{" "}
-              <Link
-                to="/login"
+              <button
+                onClick={() => setShowLogin(false)}
                 className="text-indigo-800 no-underline font-medium"
               >
                 Login
-              </Link>
+              </button>
             </p>
           </div>
         </div>
-      </div>
 
-    </div>
+    </>
   );
 };
 

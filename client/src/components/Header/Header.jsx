@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import usePopupToggle from '../../hooks/hideModals';
+import Modal from '../Modals/Modal';
+import Login from '../../Pages/auth/Login';
+import Auth from '../../Pages/auth/Auth';
+import { BsXLg } from 'react-icons/bs';
 const Header = () => {
   const [menu, setMenu] = useState(false);
+  const {open, handlePopup} = usePopupToggle()
   return (
     <>
         <header>
@@ -11,8 +17,9 @@ const Header = () => {
                 <Link to="/">
                   <img className="w-48 items-center pt-3" src={'https://www.flyblack.com/logo.svg'} alt="" />
                 </Link>
+                {/* menu toggle */}
                 <span
-                  className="sm:hidden text-white cursor-pointer flex duration-200"
+                  className=" flex md:hidden text-white cursor-pointer duration-200"
                   id="mobile_btn"
                   onClick={() => setMenu(!menu)}
                 >
@@ -31,10 +38,12 @@ const Header = () => {
                     />{" "}
                   </svg>
                 </span>
+              {/* menu toggle */}
               </div>
             </div>
 
-            <nav className="hidden sm:block sm:flex w-full sm:w-auto mx-auto" id="main_menu">
+            <nav className="hidden sm:flex w-full sm:w-auto mx-auto" id="main_menu">
+
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white">
                     {
                       menuList?.map((data, i) => <NavItem key={data.id} data={data}/>)
@@ -42,63 +51,44 @@ const Header = () => {
                 </ul>
               </nav>
 
-            {menu && (
-              <nav className="sm:flex w-full sm:w-auto mx-auto absolute bg-black w-ful  left-0 right-0" id="main_menu">
-                <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white px-5">
-                  <li className="ml-0 sm:ml-8">
-                    <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
-                      href="#"
-                    >
-                      Experience
-                    </a>
-                  </li>
+              <>
 
-                  <li className="ml-0 sm:ml-8">
-                    <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
-                      href="#"
-                    >
-                      Charter
-                    </a>
-                  </li>
+              <div className={`${menu ? "translate-x-0 block duration-700 transition-all" : "-translate-x-[500px] z-0 opacity-0 duration-700 transition-all"} lg:hidden bg-black bg-opacity-0 w-full h-screen justify-end items-center fixed z-50 top-0 left-0 right-0 bottom-0 =`}>
 
-                  <li className="ml-0 sm:ml-8">
-                    <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
-                      href="#services"
-                    >
-                      Shuttole
-                    </a>
-                  </li>
+                <div className={"bg-white h-full w-10/12 relative"}>
+                    
+                <button
+                className="absolute top-2 right-4 w-8 h-8 border rounded-full p-2 flex justify-center cursor-pointer items-center modal-close"
+                onClick={() => setMenu(false)}
+                >
+                  <BsXLg className="modal-close"/>
+                </button>
+                <div className="py-12">
+                <ul>
+                        {
+                          menuList.map((data, i) => {
+                              return <li className='py-2 hover:bg-gray-100 w-full p-4' key={data.id}><Link to={data.path} className='block'>{data.title}</Link></li>
+                          })
+                        }                           
+                      </ul>
+                </div>
+                </div>
 
-                  <li className="ml-0 sm:ml-8">
-                    <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
-                      href="#brand"
-                    >
-                      Deals
-                    </a>
-                  </li>
+              </div>
 
-                  <li className="ml-0 sm:ml-8">
-                    <a
-                      className="nav text-gray-100 hover:text-gray-200 transition-colors text-lg  font-thin no-underline"
-                      href="#"
-                    >
-                      Membership
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            )}
+              </>
 
             <div className="hidden sm:block lg:flex items-center justify-end py-3 text-white gap-6">
-            <button className='text-gray-100 no-underline hover:text-sky-100'>Sing in</button>
+            <button className='text-gray-100 no-underline hover:text-sky-100' onClick={handlePopup}>Sing in</button>
             </div>
           </div>
       </header>
-    
+      
+      {
+        open && <Modal >
+          <Auth/>
+        </Modal>
+      }
     
     </>
   )
