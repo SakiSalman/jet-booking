@@ -15,7 +15,7 @@ const Deals = () => {
       {/* Banner End */}
 
 
-      <div className="_container py-20">
+      <div className="_container py-10 lg:py-20">
         <div className='text-center lg:w-3/5 mx-auto'>
           <h1 className='text-4xl font-medium mt-5 lg:mt-0' >Deals</h1>
           <p className='text-lg:text-xl'>Choose from one of our One Way Deals below and the entire aircraft and all seats are yours. Fly to major destinations on various category size aircraft from the FlyBLACK Fleet. Check back often as our Deals are continuously updated.</p>
@@ -23,7 +23,7 @@ const Deals = () => {
         <div>
           <DealsForm />
         </div>
-        <div className='grid grid-cols-1 w-full lg:w-4/6 mx-auto gap-3 max-h-[400px]  lg:max-h-[500px] overflow-y-auto px-4 overflow-x-auto'>
+        <div className='grid grid-cols-1 w-full lg:w-4/6 mx-auto gap-3 max-h-[400px]  lg:max-h-[500px] overflow-y-auto px-4 overflow-x-auto mb-5'>
              <DealsCard/>
              <DealsCard/>
              <DealsCard/>

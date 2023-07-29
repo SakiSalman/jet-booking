@@ -38,7 +38,7 @@ const JetBookingForm = ({cls, bgColor}) => {
     <>
       <div className={`bg-[${bgColor}]`}>
         <div className="p-2 form-item-wrapper md:p-10 md:flex md:justify-center md:flex-col  ">
-          <div className={`bg-white lg:w-7/12 p-4 md:py-20 md:rounded-2xl md:mx-auto ${cls}`}>
+          <div className={`bg-white w-full lg:w-9/12 p-4 md:py-20 md:rounded-2xl md:mx-auto ${cls}`}>
             <div className="flex flex-wrap justify-between">
               <div className="py-2 text-lg text-black uppercase">
                 Book a charter Flight!

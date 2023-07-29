@@ -7,7 +7,7 @@ const DealsCard = () => {
       <img src="/images/jet-1.jpg" alt="" className='w-full h-full object-cover'/>
     </div>
     <div className='col-span-3 object-cover py-3 flex md:flex-row flex-col gap-4 lg:gap-10 lg:items-center px-3 md:px-0'>
-        <div className='flex justify-between'>
+        <div className='flex justify-between flex-row md:flex-col'>
             <p className='text-xl font-medium'>Saturday</p>
             <p className='text-lg text-gray-500'>july 19</p>
          </div>

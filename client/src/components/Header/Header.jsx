@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, NavLink, useLocation, useParams, useRoutes } from 'react-router-dom';
 import usePopupToggle from '../../hooks/hideModals';
 import Modal from '../Modals/Modal';
 import Login from '../../Pages/auth/Login';
@@ -8,6 +8,19 @@ import { BsXLg } from 'react-icons/bs';
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const {open, handlePopup} = usePopupToggle()
+  const path = useLocation()
+
+  // hidding menu pannel on path change
+  useEffect(( () => {
+    setMenu(false)
+  }), [path])
+
+  // handle sign in popup for mobile
+  const handleSignin = () => {
+    handlePopup()
+    setMenu(false)
+  }
+
   return (
     <>
         <header>
@@ -70,7 +83,8 @@ const Header = () => {
                               return <li className='py-2 hover:bg-gray-100 w-full p-4' key={data.id}><Link to={data.path} className='block'>{data.title}</Link></li>
                           })
                         }                           
-                      </ul>
+                    </ul>
+                    <button className='text-black p-4' onClick={handleSignin}>Sing in</button>
                 </div>
                 </div>
 
