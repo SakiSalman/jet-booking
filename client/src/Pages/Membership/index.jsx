@@ -23,7 +23,7 @@ const Membership = () => {
               </li>
               <li>-</li>
               <li>
-                <a href="#">Membership</a>
+                <a href="#">Member</a>
               </li>
             </ul>
           </div>
