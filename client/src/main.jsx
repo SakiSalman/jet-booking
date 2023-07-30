@@ -7,8 +7,6 @@ import {
 import Layout from './Layouts/Layout';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
-import Login from './Pages/auth/Login';
-import Register from './Pages/auth/Register';
 import './index.css'
 import Home from './Pages/Home';
 import Experience from './Pages/Experience';

@@ -3,7 +3,7 @@ import React from "react";
 const ExperienceCard = () => {
   return (
     <>
-      <div className="box p-4 rounded-lg bg-white">
+      <div className="p-4 rounded-lg bg-white border">
         <img
           className="rounded-md"
           src="https://themeim.com/wp/flynext/wp-content/uploads/2021/11/15-570x400.jpg"
@@ -32,7 +32,7 @@ const ExperienceCard = () => {
         </div>
         <div className="card-footer flex justify-center items-center pt-4">
           <div className="">
-            <a className="text-xl text-white py-2 px-4 bg-yellow-800 hover:bg-yellow-900  rounded-md" href="">
+            <a className="text-xl text-white py-2 px-4 bg-rose-800 hover:bg-yellow-700  rounded-md" href="">
               <i class="fa-sharp fa-solid fa-jet-fighter items-center"></i> Book
               Now
             </a>

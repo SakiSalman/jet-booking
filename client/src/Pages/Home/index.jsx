@@ -88,20 +88,20 @@ const Home = () => {
       {/* Private jet Start*/}
       
       <section>
-        <div className="_container mx-auto py-10 lg:py-20">
+        <div className="_container mx-auto py-10 lg:py-20 px-3 lg:px-0">
           <div className="sm:w-2/3 mx-auto">
             <h2 className="text-center">
               Private Jet Performance and Specifications
             </h2>
           </div>
 
-          <div className="performance flex-row lg:px-6 sm:px-0 sm:flex items-center py-12">
+          <div className="flex-row lg:px-6 sm:px-0 sm:flex items-center py-12">
             <div className="sm:basis-1/4">
               <div className="pb-12">
                 <h3 className="text-[22px] font-bold mb-4">
                   LUXURY AND COMFORT
                 </h3>
-                <p className="sm:w-2/3 text-[18px]">
+                <p className="text-[18px]">
                   Flying should be a pleasure and we’ll make your charter
                   experience as luxurious and comfortable as possible.
                 </p>
@@ -110,7 +110,7 @@ const Home = () => {
                 <h3 className="text-[22px] font-bold mb-4">
                   LUXURY AND COMFORT
                 </h3>
-                <p className="sm:w-2/3 text-[18px]">
+                <p className="text-[18px]">
                   Flying should be a pleasure and we’ll make your charter
                   experience as luxurious and comfortable as possible.
                 </p>
@@ -130,12 +130,12 @@ const Home = () => {
               </motion.div>
 
             </div>
-            <div className="sm:basis-1/4 sm:pl-12">
+            <div className="sm:basis-1/4">
               <div className="pb-12">
                 <h3 className="text-[22px] font-bold mb-4">
                   LUXURY AND COMFORT
                 </h3>
-                <p className="sm:w-2/3 text-[18px]">
+                <p className="text-[18px]">
                   Flying should be a pleasure and we’ll make your charter
                   experience as luxurious and comfortable as possible.
                 </p>
@@ -144,7 +144,7 @@ const Home = () => {
                 <h3 className="text-[22px] font-bold mb-4">
                   LUXURY AND COMFORT
                 </h3>
-                <p className="sm:w-2/3 text-[18px]">
+                <p className="text-[18px]">
                   Flying should be a pleasure and we’ll make your charter
                   experience as luxurious and comfortable as possible.
                 </p>

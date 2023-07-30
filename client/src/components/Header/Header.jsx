@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
         <header>
-          <div className="_container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto">
+          <div className="_container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto fixed w-full top-0 right-0 left-0">
             <div className="">
               <div className="logo flex justify-between items-center">
                 <Link to="/">
@@ -59,14 +59,18 @@ const Header = () => {
 
                 <ul className="flex w-full sm:w-auto justify-center mx-auto py-3 flex-col sm:flex-row dark:text-white">
                     {
-                      menuList?.map((data, i) => <NavItem key={data.id} data={data}/>)
+
+                      menuList?.map((data, i) =>{
+                        const tw = data.path == path.pathname ? "text-yellow-600" : "text-gray-100"
+                        return   <NavItem key={data.id} data={data} tw={tw}/>
+                      })
                     }
                 </ul>
               </nav>
 
               <>
 
-              <div className={`${menu ? "translate-x-0 block duration-700 transition-all" : "-translate-x-[500px] z-0 opacity-0 duration-700 transition-all"} lg:hidden bg-black bg-opacity-0 w-full h-screen justify-end items-center fixed z-50 top-0 left-0 right-0 bottom-0 =`}>
+              <div className={`${menu ? "translate-x-0 block duration-700 transition-all" : "-translate-x-[1500px] z-0 opacity-0 duration-700 transition-all"} lg:hidden bg-black bg-opacity-0 w-full h-screen justify-end items-center fixed z-50 top-0 left-0 right-0 bottom-0 =`}>
 
                 <div className={"bg-white h-full w-10/12 relative"}>
                     
@@ -80,11 +84,12 @@ const Header = () => {
                 <ul>
                         {
                           menuList.map((data, i) => {
-                              return <li className='py-2 hover:bg-gray-100 w-full p-4' key={data.id}><Link to={data.path} className='block'>{data.title}</Link></li>
+                            const tw = data.path === path.pathname ? "text-yellow-600" : "text-black"
+                              return <NavItem data={data} tw={tw} key={data.id}/>
                           })
                         }                           
                     </ul>
-                    <button className='text-black p-4' onClick={handleSignin}>Sing in</button>
+                    <button className='text-yellow-600 p-4' onClick={handleSignin}>Sing in</button>
                 </div>
                 </div>
 
@@ -93,7 +98,7 @@ const Header = () => {
               </>
 
             <div className="hidden sm:block lg:flex items-center justify-end py-3 text-white gap-6">
-            <button className='text-gray-100 no-underline hover:text-sky-100' onClick={handlePopup}>Sing in</button>
+            <button className='text-gray-100 no-underline hover:text-yellow-600' onClick={handlePopup}>Sing in</button>
             </div>
           </div>
       </header>
@@ -110,12 +115,13 @@ const Header = () => {
 
 export default Header
 
-const NavItem = ({data}) => {
+const NavItem = ({data, tw}) => {
 
   const {id, title, path} = data
-  return <li className="ml-0 sm:ml-8">
+
+  return <li className="ml-0 sm:ml-8 px-4 py-2">
   <Link
-    className="nav text-gray-100 hover:text-gray-200 transition-colors text-sm  font-thin no-underline"
+    className={`hover:text-yellow-600 transition-colors text-lg font-thin no-underline ${tw? tw : ''}`}
     to={path}
   >
     {title}
