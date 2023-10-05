@@ -6,9 +6,11 @@ import Login from '../../Pages/auth/Login';
 import Auth from '../../Pages/auth/Auth';
 import { BsXLg } from 'react-icons/bs';
 const Header = () => {
+  const [scrollTop, setScrollTop] = useState(false)
   const [menu, setMenu] = useState(false);
   const {open, handlePopup} = usePopupToggle()
   const path = useLocation()
+
 
   // hidding menu pannel on path change
   useEffect(( () => {
@@ -20,11 +22,27 @@ const Header = () => {
     handlePopup()
     setMenu(false)
   }
+  const handleScroll = () => {
+    // Get the current scroll position
+    const scrollTop = window.scrollY;
 
+    // Check if scroll top is greater than 50px
+    if (scrollTop > 50) {
+      setScrollTop(true);
+    } else {
+      setScrollTop(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
-        <header>
-          <div className="_container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto fixed w-full top-0 right-0 left-0">
+        <header className={`fixed w-full top-0 right-0 left-0 ${scrollTop ? "bg-black" : "bg-transparent"} transition-all duration-500 z-[55]`}>
+          <div className="_container sm:flex sm:justify-between px-2 py-3 sm:px-4 mx-auto">
             <div className="">
               <div className="logo flex justify-between items-center">
                 <Link to="/">
